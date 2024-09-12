@@ -1,4 +1,16 @@
 ## Run in docker container
 ```
-docker run -it --name tyres-scrap -v ./:/tyres-scrap -w /tyres-scrap python:3.11 bash
+docker build -t tyres-scrap .
+docker run -d --name tyres-scrap -v ./:/tyres-scrap tyres-scrap python main.py
+```
+
+### Display logs
+```
+docker logs -f tyres-scrap
+```
+
+### Stop/continue scrapping
+```
+docker stop tyres-scrap
+docker start tyres-scrap
 ```
